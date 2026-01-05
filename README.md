@@ -38,6 +38,72 @@ L’architecture du projet est composée des éléments suivants :
 
 
 ⸻
+II:Etapes De realisation 
+
+1. Conception de l’architecture
+
+Une architecture cloud simple et efficace a été définie :
+	•	Un serveur central Zabbix hébergé dans un environnement virtualisé
+	•	Des agents Zabbix installés sur chaque machine supervisée
+	•	Une base de données MySQL pour le stockage des données
+	•	Une interface Web pour l’administration et la visualisation
+
+L’architecture a été pensée pour être modulaire et évolutive.
+
+⸻
+
+2. Préparation de l’environnement
+
+Avant le déploiement, l’environnement a été préparé :
+	•	Installation du système Linux (Ubuntu Server)
+	•	Installation de Docker et Docker Compose
+	•	Vérification de la connectivité réseau entre les machines
+	•	Configuration des ports nécessaires à la supervision
+
+⸻
+
+3. Déploiement de la plateforme Zabbix
+
+Le déploiement de Zabbix a été réalisé à l’aide de Docker Compose :
+	•	Lancement des conteneurs Zabbix Server, Web et MySQL
+	•	Vérification du bon fonctionnement des services
+	•	Accès à l’interface Web Zabbix via le navigateur
+
+Cette approche permet un déploiement rapide et reproductible.
+
+⸻
+
+4. Installation et configuration des agents
+
+Sur chaque machine à superviser :
+	•	Installation de Zabbix Agent 2
+	•	Configuration de l’adresse du serveur Zabbix
+	•	Définition du nom d’hôte
+	•	Démarrage et activation du service agent
+
+Les machines sont ensuite ajoutées dans l’interface Zabbix.
+
+⸻
+
+5.Configuration de la supervision
+
+Une fois les hôtes ajoutés :
+	•	Association de templates Zabbix adaptés
+	•	Activation de la collecte des métriques
+	•	Définition de triggers pour les seuils critiques
+	•	Configuration des graphiques et dashboards
+
+⸻
+
+6. Tests et validation
+
+Des tests ont été réalisés pour valider la solution :
+	•	Test de communication Agent ↔ Server
+	•	Simulation de surcharge CPU / mémoire
+	•	Vérification de la génération des alertes
+	•	Contrôle de l’affichage des données en temps réel
+----
+
 
 🛠️ Technologies utilisées
 	•	Zabbix (Server & Agent 2)
